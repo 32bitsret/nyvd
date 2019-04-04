@@ -31,7 +31,7 @@ const
  */
 //=============================================================================
 server.listen(port, function () {
-  return console.log({message: 'SnowAfrica is listening on port %d in %s mode', port, env});
+  return console.log({message: 'PYC is listening on port %d in %s mode', port, env});
 });
 //=============================================================================
 /**
