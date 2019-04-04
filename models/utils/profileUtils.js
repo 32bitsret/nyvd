@@ -47,18 +47,13 @@ exports.updateProfile = (doc) => {
 			return Promise.reject("Either query or Update params of the request is empty");
 	}
 	else {
-    if (_.has(doc.update, 'education')) {
-
-    }
-    else {
-      Profile.findOneAndUpdate(doc.query, doc.update, {new: true})
+      Profile.findOneAndUpdate(doc.query, {$push: doc.update}, {new: true})
       .then(updatedDoc => {
         return res.status(200).json({data: updatedDoc, message: 'Profile updated successfully'});
       })
       .catch(error => {
         return res.status(400).json({message: 'An error occured during update'});
       });
-    } 
 	}
 };
 
@@ -66,9 +61,9 @@ exports.updateProfile = (doc) => {
 exports.getProfile = (data, res) => {
   Profile.findOne({email: data.email})
     .then(profile => {
-      return res.status(200).json({data: profile, message: 'Artist retrieved successfully'});
+      return res.status(200).json({data: profile, message: 'Profile retrieved successfully'});
     })
     .catch(error => {
-      return res.status(400).json({message: 'An error occured while trying to retrieve Artist with id' + data.email});
+      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with email' + data.email});
     })
 }
