@@ -29,7 +29,7 @@ const app = express();
 const
   port = process.env.PORT,
   env = process.env.NODE_ENV,
-  { userRoutes } = require('./routes');
+  { userRoutes, profileRoutes } = require('./routes');
   
 let
   db,
@@ -105,6 +105,7 @@ passport.serializeUser((user, done) => {
   done(null, user);
 })
 app.use('/pyc', userRoutes);
+app.use('/pyc', profileRoutes);
 
 app.get('/apidoc', function(req, res) {
   res.render("index")

@@ -8,6 +8,7 @@ const
     express = require('express'),
     passport = require("passport"),
     jwt = require('jsonwebtoken'),
+    profileUtils = require('./models/utils/profileUtils'),
     userUtils = require('../models/utils/userUtils');
 //=============================================================================
 /**
@@ -64,7 +65,8 @@ router.post('/registerUser', (req, res) => {
     userUtils.registerUser(req.body)
         .then(result => {
             console.log('Successfully created user and sent email ' + JSON.stringify(result));
-            return res.status(200).json(result);
+            return profileUtils.createProfile(result.id)
+            // return res.status(200).json(result);
         })
         .catch(err => {
           console.error('/registerUser ' + JSON.stringify(err));

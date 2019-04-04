@@ -33,6 +33,10 @@ const UserSchema = mongoose.Schema({
     type: Number,
     unique: true
   },
+  token: {
+    type: String,
+    required: true
+  },
   activated: {
     type: Boolean,
     default: true
