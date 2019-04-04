@@ -8,7 +8,7 @@ const
     express = require('express'),
     passport = require("passport"),
     jwt = require('jsonwebtoken'),
-    profileUtils = require('./models/utils/profileUtils'),
+    profileUtils = require('../models/utils/profileUtils'),
     userUtils = require('../models/utils/userUtils');
 //=============================================================================
 /**
@@ -50,6 +50,7 @@ const router = express.Router();
 * @apiGroup User
 * @apiParam {String} email email of User
 * @apiParam {String} password password of user 
+* @apiParam {String} token token from user device
 * @apiParam {String} [surname] firstname of user 
 * @apiParam {String} [othernames] lastname of user 
 * @apiParam {String} [photo] url link to photo saved to s3 
@@ -62,16 +63,20 @@ const router = express.Router();
 //used on register page, brand new users
 router.post('/registerUser', (req, res) => {
 
-    userUtils.registerUser(req.body)
-        .then(result => {
-            console.log('Successfully created user and sent email ' + JSON.stringify(result));
-            return profileUtils.createProfile(result.id)
-            // return res.status(200).json(result);
-        })
-        .catch(err => {
-          console.error('/registerUser ' + JSON.stringify(err));
-          return res.status(400).json({message: err});
-    });
+  userUtils.registerUser(req.body)
+    .then(result => {
+      return profileUtils.createProfile({email: req.body.email})
+      .then(ok => {
+        console.log('Successfully created user and sent email ' + JSON.stringify(result));
+        return res.status(200).json(result);  
+      })
+      .catch(error => res.status(400).json({message: error}));
+      // return res.status(200).json(result);
+    })
+    .catch(err => {
+      console.error('/registerUser ' + JSON.stringify(err));
+      return res.status(400).json({message: err});
+  });
 });
 
 /**
