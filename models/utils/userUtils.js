@@ -48,7 +48,6 @@ exports.createUsers = (doc) => {
 			return newUser.save()
 			// }
 			.catch(error => {
-				console.log('error')
 				console.log(error.message)
 				//  return Promise.reject(error.message);
 				throw error.message
@@ -66,8 +65,7 @@ exports.registerUser = (inputUser) => {
 			if (!user) {
 				return this.createUsers(inputUser)
 				.catch(error => {
-					console.log("error w")
-					return Promise.reject(error)
+					return Promise.reject(error);
 				});
 			}
 			else {

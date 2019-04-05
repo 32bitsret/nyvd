@@ -33,9 +33,8 @@ const UserSchema = mongoose.Schema({
     type: Number,
     unique: true
   },
-  token: {
+  expo_token: {
     type: String,
-    required: true
   },
   activated: {
     type: Boolean,

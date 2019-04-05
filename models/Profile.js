@@ -37,7 +37,7 @@ const ProfileSchema = mongoose.Schema({
   },
   phone: { 
     type: Number,
-    unique: true 
+    unique: true
   },
   address: { 
     type: String 

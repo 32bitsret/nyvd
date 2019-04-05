@@ -65,10 +65,27 @@ router.post('/registerUser', (req, res) => {
 
   userUtils.registerUser(req.body)
     .then(result => {
-      return profileUtils.createProfile({email: req.body.email})
+      return profileUtils.createProfile({email: req.body.email, phone: req.body.phone})
       .then(ok => {
-        console.log('Successfully created user and sent email ' + JSON.stringify(result));
-        return res.status(200).json(result);  
+				const secretOrKey = 'superSasdlfjal;jafecasfaklfnalkfretKey';
+        const payload = {
+					id: result._id,
+					firstname: result.firstname,
+					lastname: result.lastname,
+					photo: result.photo,
+					email: result.email
+				}; 
+        return jwt.sign(payload, secretOrKey, { expiresIn: 360000 }, (err, token) => {
+					if(err) {
+						console.log(err)
+						throw error;
+					}
+					if (token) {
+            console.log('Successfully created user and sent email ' + JSON.stringify(result));
+						return res.status(200).json({token, result})
+					}
+				})
+        // return res.status(200).json(result);  
       })
       .catch(error => res.status(400).json({message: error}));
       // return res.status(200).json(result);
