@@ -28,10 +28,10 @@ const
 
 
 /**
-* @api {get} /pyc/profile/:id Find a User Profile by email
+* @api {get} /pyc/profile/:id Find a User Profile by id
 * @apiName Find Profile of a user
 * @apiGroup Profile
-* @apiParam {String} email email of user 
+* @apiParam {String} id id of user 
 * @apiUse ProfileSuccess
 *
 * @apiUse ProfileError  
@@ -40,12 +40,12 @@ const
 router.get('/profile/:id', (req, res) => {
   return profileUtils.getProfile(req.body, res);
 });
-
+ 
 /**
 * @api {put} /pyc/profile/ Update a Profile 
 * @apiName Update Profile
 * @apiGroup Profile
-* @apiParam {Object} query Containing query params (eg email on profile {email: 'abc@example.com'}) 
+* @apiParam {Object} query Containing query params (eg id on profile {id: '123456789}) 
 * @apiParam {Object} update Containing update params (eg location of artist {address: 'new address'}) 
 * @apiUse ProfileSuccess
 *

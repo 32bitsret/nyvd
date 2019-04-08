@@ -2,7 +2,7 @@ define({ "api": [
   {
     "type": "get",
     "url": "/pyc/profile/:id",
-    "title": "Find a User Profile by email",
+    "title": "Find a User Profile by id",
     "name": "Find_Profile_of_a_user",
     "group": "Profile",
     "parameter": {
@@ -12,8 +12,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "email",
-            "description": "<p>email of user</p>"
+            "field": "id",
+            "description": "<p>id of user</p>"
           }
         ]
       }
@@ -75,7 +75,7 @@ define({ "api": [
             "type": "Object",
             "optional": false,
             "field": "query",
-            "description": "<p>Containing query params (eg email on profile {email: 'abc@example.com'})</p>"
+            "description": "<p>Containing query params (eg id on profile {id: '123456789})</p>"
           },
           {
             "group": "Parameter",

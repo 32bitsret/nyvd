@@ -8,21 +8,21 @@ const
   Profile = require('../Profile'),
 	_ = require('lodash');
 
-exports.getProfile = (filter) => {
+// exports.getProfile = (filter) => {
 
-	if (_.isEmpty(filter)) {
-		return Promise.reject('Missing key Fields');
-	}
-	return Profile.findOne(filter).exec()
-		.then(result => {
-			if (!_.isEmpty(result)) {
-				return result;
-			}
-			else {
-				return false;
-			}
-		});
-};
+// 	if (_.isEmpty(filter)) {
+// 		return Promise.reject('Missing key Fields');
+// 	}
+// 	return Profile.findOne(filter).exec()
+// 		.then(result => {
+// 			if (!_.isEmpty(result)) {
+// 				return result;
+// 			}
+// 			else {
+// 				return false;
+// 			}
+// 		});
+// };
 
 exports.createProfile = (doc) => {
 	if (_.isEmpty(doc)) {
@@ -59,11 +59,14 @@ exports.updateProfile = (doc) => {
 
 
 exports.getProfile = (data, res) => {
-  Profile.findOne({email: data.email})
+	if (_.isEmpty(data)) {
+		return Promise.reject('Missing key Fields');
+	}
+  Profile.findOne({id: data.id})
     .then(profile => {
       return res.status(200).json({data: profile, message: 'Profile retrieved successfully'});
     })
     .catch(error => {
-      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with email' + data.email});
+      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with id' + data.id});
     })
 }
