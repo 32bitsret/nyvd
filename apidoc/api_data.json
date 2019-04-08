@@ -1,5 +1,136 @@
 [
   {
+    "type": "get",
+    "url": "/pyc/profile/:id",
+    "title": "Find a User Profile by email",
+    "name": "Find_Profile_of_a_user",
+    "group": "Profile",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email of user</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./profile.js",
+    "groupTitle": "Profile",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>ID of Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>firstname on Profile</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>Error message from the api request</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "put",
+    "url": "/pyc/profile/",
+    "title": "Update a Profile",
+    "name": "Update_Profile",
+    "group": "Profile",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": false,
+            "field": "query",
+            "description": "<p>Containing query params (eg email on profile {email: 'abc@example.com'})</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object",
+            "optional": false,
+            "field": "update",
+            "description": "<p>Containing update params (eg location of artist {address: 'new address'})</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./profile.js",
+    "groupTitle": "Profile",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>ID of Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>firstname on Profile</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>Error message from the api request</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "post",
     "url": "/pyc/loginUser",
     "title": "Login a user",
@@ -76,6 +207,13 @@
             "optional": false,
             "field": "password",
             "description": "<p>password of user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token from user device</p>"
           },
           {
             "group": "Parameter",
