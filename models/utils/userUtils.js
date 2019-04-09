@@ -105,7 +105,7 @@ exports.loginUser = (inputUser, res) => {
 						throw error;
 					}
 					if (token) {
-						return res.status(200).json({token})
+						return res.status(200).json({token, payload})
 					}
 				})
 			}

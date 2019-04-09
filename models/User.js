@@ -20,10 +20,10 @@ const UserSchema = mongoose.Schema({
       message: props => `${props.value} is not long enough!`
     }
   },
-  othernames: { 
+  firstname: { 
     type: String 
   },
-  surname: { 
+  lastname: { 
     type: String 
   },
   photo: {

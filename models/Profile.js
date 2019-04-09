@@ -42,7 +42,7 @@ const ProfileSchema = mongoose.Schema({
   address: { 
     type: String 
   },
-  education: [{
+  education: {
     educational_qualification: { 
       type: String,
       uppercase: true,
@@ -60,7 +60,7 @@ const ProfileSchema = mongoose.Schema({
     certificate: {
       type: String
     }
-  }],
+  },
   photo: {
     type: String
   },
