@@ -67,6 +67,6 @@ exports.getProfile = (data, res) => {
       return res.status(200).json({data: profile, message: 'Profile retrieved successfully'});
     })
     .catch(error => {
-      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with id' + data.id});
+      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with id' + data.phone});
     })
 }

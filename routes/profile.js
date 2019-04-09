@@ -28,7 +28,7 @@ const
 
 
 /**
-* @api {get} /pyc/profile/:phone Find a User Profile by phone number
+* @api {get} /pyc/profile/ Find a User Profile by phone number
 * @apiName Find Profile of a user
 * @apiGroup Profile
 * @apiParam {String} phone phone number of user 
@@ -37,8 +37,8 @@ const
 * @apiUse ProfileError  
 */
 
-router.get('/profile/:phone', (req, res) => {
-  return profileUtils.getProfile(req.params, res);
+router.get('/profile/', (req, res) => {
+  return profileUtils.getProfile(req.query, res);
 });
  
 /**
@@ -54,7 +54,7 @@ router.get('/profile/:phone', (req, res) => {
 
 
 router.put('/profile/', (req, res) => {
-  return artistUtils.updateArtist(req.body, res);
+  return profileUtils.updateProfile(req.body, res);
 });
 
 

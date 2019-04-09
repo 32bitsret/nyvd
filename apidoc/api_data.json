@@ -1,7 +1,7 @@
 [
   {
     "type": "get",
-    "url": "/pyc/profile/:phone",
+    "url": "/pyc/profile/",
     "title": "Find a User Profile by phone number",
     "name": "Find_Profile_of_a_user",
     "group": "Profile",
