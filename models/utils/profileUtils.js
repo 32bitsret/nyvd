@@ -62,7 +62,7 @@ exports.getProfile = (data, res) => {
 	if (_.isEmpty(data)) {
 		return Promise.reject('Missing key Fields');
 	}
-  Profile.findOne({id: data.id})
+  Profile.findOne({phone: data.phone})
     .then(profile => {
       return res.status(200).json({data: profile, message: 'Profile retrieved successfully'});
     })

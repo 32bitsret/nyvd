@@ -28,17 +28,17 @@ const
 
 
 /**
-* @api {get} /pyc/profile/:id Find a User Profile by id
+* @api {get} /pyc/profile/:phone Find a User Profile by phone number
 * @apiName Find Profile of a user
 * @apiGroup Profile
-* @apiParam {String} id id of user 
+* @apiParam {String} phone phone number of user 
 * @apiUse ProfileSuccess
 *
 * @apiUse ProfileError  
 */
 
-router.get('/profile/:id', (req, res) => {
-  return profileUtils.getProfile(req.body, res);
+router.get('/profile/:phone', (req, res) => {
+  return profileUtils.getProfile(req.params, res);
 });
  
 /**
