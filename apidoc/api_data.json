@@ -82,7 +82,7 @@
             "type": "Object",
             "optional": false,
             "field": "update",
-            "description": "<p>Containing update params (eg location of artist {address: 'new address'})</p>"
+            "description": "<p>Containing update params (eg phone of user {phone: 12324343})</p>"
           }
         ]
       }

@@ -46,7 +46,7 @@ router.get('/profile/', (req, res) => {
 * @apiName Update Profile
 * @apiGroup Profile
 * @apiParam {Object} query Containing query params (eg id on profile {id: '123456789}) 
-* @apiParam {Object} update Containing update params (eg location of artist {address: 'new address'}) 
+* @apiParam {Object} update Containing update params (eg phone of user {phone: 12324343}) 
 * @apiUse ProfileSuccess
 *
 * @apiUse ProfileError  
