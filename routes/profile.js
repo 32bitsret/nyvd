@@ -15,8 +15,21 @@ const
 * @apiSuccess {String} _id ID of Profile
 * @apiSuccess {String} email email on profile
 * @apiSuccess {String} firstname firstname on Profile
-*
+* @apiSuccess {String} middlename middlename on Profile
+* @apiSuccess {String} lastname lastname on Profile
+* @apiSuccess {String} gender gender on Profile
+* @apiSuccess {String} DoB Date of birth on Profile as string
+* @apiSuccess {String} marital_status marital status on Profile
+* @apiSuccess {String} disability Any Profile Disability
+* @apiSuccess {String} lga Local government area of user on profile
+* @apiSuccess {Number} phone phone number on profile
+* @apiSuccess {String} address address on profile
+* @apiSuccess {String} address address on profile
+* @apiSuccess {String} photo photo url on profile
+* @apiSuccess {String} resume resume url on profile
+* @apiSuccess {Object} education educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)
 */
+
 
 /**
  * @apiDefine ProfileError

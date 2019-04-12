@@ -33,15 +33,15 @@ exports.createUsers = (doc) => {
 			return Promise.reject("The body of the request is empty");
 	}
 
-	if (_.isArray(doc)) {
-			return User.insertMany(doc)
-			.catch(error => {
-				console.log('error')
-				console.log(error.message)
-				//  return Promise.reject(error.message);
-				throw error.message
-			});
-	}
+	// if (_.isArray(doc)) {
+	// 		return User.insertMany(doc)
+	// 		.catch(error => {
+	// 			console.log('error')
+	// 			console.log(error.message)
+	// 			//  return Promise.reject(error.message);
+	// 			throw error.message
+	// 		});
+	// }
 	else {
 			const newUser = new User(doc);
 			// try {

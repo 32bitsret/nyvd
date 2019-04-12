@@ -44,6 +44,90 @@ define({ "api": [
             "optional": false,
             "field": "firstname",
             "description": "<p>firstname on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "middlename",
+            "description": "<p>middlename on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>lastname on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>gender on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "DoB",
+            "description": "<p>Date of birth on Profile as string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "marital_status",
+            "description": "<p>marital status on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "disability",
+            "description": "<p>Any Profile Disability</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lga",
+            "description": "<p>Local government area of user on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>phone number on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>photo url on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resume",
+            "description": "<p>resume url on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "education",
+            "description": "<p>educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)</p>"
           }
         ]
       }
@@ -113,6 +197,90 @@ define({ "api": [
             "optional": false,
             "field": "firstname",
             "description": "<p>firstname on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "middlename",
+            "description": "<p>middlename on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>lastname on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>gender on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "DoB",
+            "description": "<p>Date of birth on Profile as string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "marital_status",
+            "description": "<p>marital status on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "disability",
+            "description": "<p>Any Profile Disability</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lga",
+            "description": "<p>Local government area of user on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>phone number on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>photo url on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resume",
+            "description": "<p>resume url on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "education",
+            "description": "<p>educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)</p>"
           }
         ]
       }
@@ -245,8 +413,8 @@ define({ "api": [
           },
           {
             "group": "Parameter",
-            "type": "String",
-            "optional": true,
+            "type": "Number",
+            "optional": false,
             "field": "phone",
             "description": "<p>phone number of user</p>"
           }
@@ -303,7 +471,7 @@ define({ "api": [
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Number",
             "optional": false,
             "field": "phone",
             "description": "<p>phone number of user</p>"

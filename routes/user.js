@@ -33,7 +33,7 @@ const router = express.Router();
 * @apiSuccess {String} firstname firstname of user 
 * @apiSuccess {String} lastname lastname of user 
 * @apiSuccess {String} photo url link to photo saved to s3 
-* @apiSuccess {String} phone phone number of user  
+* @apiSuccess {Number} phone phone number of user  
 * @apiSuccess {String} role role of user either admin or user  
 * @apiSuccess {Boolean} activated Status of account true or false default true
 *
@@ -56,7 +56,7 @@ const router = express.Router();
 * @apiParam {String} [firstname] firstname of user 
 * @apiParam {String} [lastname] lastname of user 
 * @apiParam {String} [photo] url link to photo saved to s3 
-* @apiParam {String} [phone] phone number of user 
+* @apiParam {Number} phone phone number of user 
 * @apiUse UserSuccess
 *
 * @apiUse UserError  
