@@ -42,12 +42,12 @@ exports.createProfile = (doc) => {
 	}
 };
 
-exports.updateProfile = (doc) => {
+exports.updateProfile = (doc, res) => {
 	if (_.isEmpty(doc.query) || _.isEmpty(doc.update)) {
 			return Promise.reject("Either query or Update params of the request is empty");
 	}
 	else {
-      Profile.findOneAndUpdate(doc.query, {$push: doc.update}, {new: true})
+      Profile.findOneAndUpdate(doc.query, doc.update, {new: true})
       .then(updatedDoc => {
         return res.status(200).json({data: updatedDoc, message: 'Profile updated successfully'});
       })
