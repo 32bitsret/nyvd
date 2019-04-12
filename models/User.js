@@ -33,6 +33,11 @@ const UserSchema = mongoose.Schema({
     type: Number,
     unique: true
   },
+  role: {
+    type: String,
+    enum: ['admin', 'user'],
+    default: 'user'
+  },
   expo_token: {
     type: String,
   },

@@ -219,6 +219,13 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": true,
+            "field": "role",
+            "description": "<p>role of user. Either admin or user. Default is user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
             "field": "surname",
             "description": "<p>firstname of user</p>"
           },
@@ -300,6 +307,13 @@ define({ "api": [
             "optional": false,
             "field": "phone",
             "description": "<p>phone number of user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "role",
+            "description": "<p>role of user either admin or user</p>"
           },
           {
             "group": "Success 200",

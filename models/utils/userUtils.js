@@ -98,7 +98,8 @@ exports.loginUser = (inputUser, res) => {
 					lastname: user.lastname,
 					photo: user.photo,
 					phone: user.phone,
-					email: user.email
+					email: user.email,
+					role: user.role
 				}; 
 				jwt.sign(payload, secretOrKey, { expiresIn: 360000 }, (err, token) => {
 					if(err) {
