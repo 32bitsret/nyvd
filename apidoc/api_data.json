@@ -226,14 +226,14 @@
             "group": "Parameter",
             "type": "String",
             "optional": true,
-            "field": "surname",
+            "field": "firstname",
             "description": "<p>firstname of user</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": true,
-            "field": "othernames",
+            "field": "lastname",
             "description": "<p>lastname of user</p>"
           },
           {
@@ -284,15 +284,15 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "surname",
-            "description": "<p>surname of user</p>"
+            "field": "firstname",
+            "description": "<p>firstname of user</p>"
           },
           {
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "othernames",
-            "description": "<p>othernames of user</p>"
+            "field": "lastname",
+            "description": "<p>lastname of user</p>"
           },
           {
             "group": "Success 200",
