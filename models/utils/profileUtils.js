@@ -65,7 +65,8 @@ exports.updateProfile = (doc, res) => {
 
 exports.getProfile = (data, res) => {
 	if (_.isEmpty(data)) {
-		return Promise.reject('Missing key Fields');
+		console.log(data)
+		return res.status(400).json({message: 'Missing key Fields'});
 	}
   Profile.findOne({phone: data.phone})
     .then(profile => {
