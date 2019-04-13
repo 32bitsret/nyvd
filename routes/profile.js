@@ -50,7 +50,7 @@ const
 * @apiUse ProfileError  
 */
 
-router.get('/profile/', (req, res) => {
+router.post('/profile/', (req, res) => {
   return profileUtils.getProfile(req.body, res);
 });
  
