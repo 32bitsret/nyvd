@@ -41,17 +41,17 @@ const
 
 
 /**
-* @api {get} /pyc/profile/ Find a User Profile by phone number
+* @api {post} /pyc/profile/ Find a User Profile by phone number
 * @apiName Find Profile of a user
 * @apiGroup Profile
-* @apiParam {String} phone phone number of user 
+* @apiParam {Number} phone phone number of user 
 * @apiUse ProfileSuccess
 *
 * @apiUse ProfileError  
 */
 
 router.get('/profile/', (req, res) => {
-  return profileUtils.getProfile(req.query, res);
+  return profileUtils.getProfile(req.body, res);
 });
  
 /**

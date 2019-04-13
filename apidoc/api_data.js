@@ -1,6 +1,6 @@
 define({ "api": [
   {
-    "type": "get",
+    "type": "post",
     "url": "/pyc/profile/",
     "title": "Find a User Profile by phone number",
     "name": "Find_Profile_of_a_user",
@@ -10,7 +10,7 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Number",
             "optional": false,
             "field": "phone",
             "description": "<p>phone number of user</p>"
