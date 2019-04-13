@@ -49,7 +49,12 @@ exports.updateProfile = (doc, res) => {
 	else {
       Profile.findOneAndUpdate(doc.query, doc.update, {new: true})
       .then(updatedDoc => {
-        return res.status(200).json({data: updatedDoc, message: 'Profile updated successfully'});
+				if (!!updatedDoc) {
+					return res.status(200).json({data: updatedDoc, message: 'Profile updated successfully'});
+				}
+				else {
+					return res.status(400).json({message: 'The document was not found'});
+				}
       })
       .catch(error => {
         return res.status(400).json({message: 'An error occured during update'});
