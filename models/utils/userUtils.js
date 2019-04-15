@@ -56,6 +56,7 @@ exports.createUsers = (doc) => {
 };
 
 exports.registerUser = (inputUser) => {
+	console.log(inputUser);
 	let { email, password } = inputUser;
 	if (_.isEmpty(inputUser) || !(email && password)) {
 		return Promise.reject('Some key fields are missing. Hint Email or Password');
