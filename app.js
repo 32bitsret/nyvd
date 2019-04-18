@@ -103,7 +103,6 @@ app.get('/test', function (req, res) {
 
 
 app.post('/pyc/upload', async function (req, res, next) {
-  console.log(req.headers)
   let fileName = req.body.name;
   let buffer = Buffer.from(req.body.photo, 'base64');
   try {
