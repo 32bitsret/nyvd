@@ -100,6 +100,22 @@ app.get('/test', function (req, res) {
   return res.status(200).
     send('Welcome to test route');
 });
+
+
+app.post('/pyc/upload', async function (req, res, next) {
+  console.log(req.headers)
+  let fileName = req.body.name;
+  let buffer = Buffer.from(req.body.photo, 'base64');
+  try {
+    const data = await uploadToS3(buffer, fileName);
+    return res.status(200).send(data);
+  } 
+  catch (error) {
+    return res.status(400).send(error);
+  }
+});
+
+
 app.use(passport.initialize());
 passport.serializeUser((user, done) => {
   done(null, user);
