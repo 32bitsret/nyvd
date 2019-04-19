@@ -445,6 +445,86 @@
     }
   },
   {
+    "type": "get",
+    "url": "/test/",
+    "title": "Hit test route",
+    "name": "Test_the_API",
+    "group": "Test",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>msg: Welcome to test route</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./profile.js",
+    "groupTitle": "Test"
+  },
+  {
+    "type": "get",
+    "url": "/pyc/upload/",
+    "title": "Upload Image",
+    "name": "Upload_image_to_s3",
+    "group": "Upload",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>base 64 string of image after taking of &quot;data:image/jpeg;base64,&quot;</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of image + ext. e.g Ernest.jpg</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>content type of image gotten between : and ; in base64 string e.g in &quot;data:image/jpeg;base64,dsadasdjkhsdjkfhsdjfh&quot; type = image/jpeg</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name of image</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "location",
+            "description": "<p>url link to image on s3 (this is the link that will be used in other payloads where photo is requested)</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./profile.js",
+    "groupTitle": "Upload"
+  },
+  {
     "type": "post",
     "url": "/pyc/loginUser",
     "title": "Login a user",
