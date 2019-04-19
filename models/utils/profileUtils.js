@@ -68,7 +68,7 @@ exports.getProfile = (data, res) => {
 		console.log(data)
 		return res.status(400).json({message: 'Missing key Fields'});
 	}
-  Profile.findOne({phone: data.phone})
+  Profile.find(data.phone ? {phone: data.phone} : '')
     .then(profile => {
       return res.status(200).json({data: profile, message: 'Profile retrieved successfully'});
     })
