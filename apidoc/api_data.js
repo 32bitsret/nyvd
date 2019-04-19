@@ -151,19 +151,6 @@ define({ "api": [
     "title": "Find all User Profiles",
     "name": "Find_all_Profiles",
     "group": "Profile",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "phone",
-            "description": "<p>phone number of user</p>"
-          }
-        ]
-      }
-    },
     "version": "0.0.0",
     "filename": "./profile.js",
     "groupTitle": "Profile",

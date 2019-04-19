@@ -58,7 +58,6 @@ router.post('/profile/', (req, res) => {
 * @api {get} /pyc/profile/ Find all User Profiles
 * @apiName Find all Profiles
 * @apiGroup Profile
-* @apiParam {Number} phone phone number of user 
 * @apiUse ProfileSuccess
 *
 * @apiUse ProfileError  
