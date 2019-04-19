@@ -62,6 +62,15 @@ exports.updateProfile = (doc, res) => {
 	}
 };
 
+exports.getAllProfile = (res) => {
+  Profile.find()
+    .then(profiles => {
+      return res.status(200).json({data: profiles, message: 'Profile retrieved successfully'});
+    })
+    .catch(error => {
+      return res.status(400).json({message: 'An error occured while trying to retrieve Profiles'});
+    })
+}
 
 exports.getProfile = (data, res) => {
 	if (_.isEmpty(data)) {

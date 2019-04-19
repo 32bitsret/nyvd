@@ -38,8 +38,6 @@ const
 
 
 
-
-
 /**
 * @api {post} /pyc/profile/ Find a User Profile by phone number
 * @apiName Find Profile of a user
@@ -52,6 +50,21 @@ const
 
 router.post('/profile/', (req, res) => {
   return profileUtils.getProfile(req.body, res);
+});
+
+
+/**
+* @api {get} /pyc/profile/ Find all User Profiles
+* @apiName Find all Profiles
+* @apiGroup Profile
+* @apiParam {Number} phone phone number of user 
+* @apiUse ProfileSuccess
+*
+* @apiUse ProfileError  
+*/
+
+router.get('/profile/', (req, res) => {
+  return profileUtils.getAllProfile(res);
 });
  
 /**

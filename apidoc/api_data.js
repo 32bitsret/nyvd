@@ -146,6 +146,152 @@ define({ "api": [
     }
   },
   {
+    "type": "get",
+    "url": "/pyc/profile/",
+    "title": "Find all User Profiles",
+    "name": "Find_all_Profiles",
+    "group": "Profile",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>phone number of user</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "./profile.js",
+    "groupTitle": "Profile",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>ID of Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "firstname",
+            "description": "<p>firstname on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "middlename",
+            "description": "<p>middlename on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastname",
+            "description": "<p>lastname on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>gender on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "DoB",
+            "description": "<p>Date of birth on Profile as string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "marital_status",
+            "description": "<p>marital status on Profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "disability",
+            "description": "<p>Any Profile Disability</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lga",
+            "description": "<p>Local government area of user on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>phone number on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>photo url on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "resume",
+            "description": "<p>resume url on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "education",
+            "description": "<p>educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>Error message from the api request</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "put",
     "url": "/pyc/profile/",
     "title": "Update a Profile",

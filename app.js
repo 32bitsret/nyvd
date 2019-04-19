@@ -96,17 +96,36 @@ app.use((req, res, next) => {
  * Routes
  */
 //=============================================================================
+/**
+* @api {get} /test/ Hit test route
+* @apiName Test the API
+* @apiGroup Test
+* @apiSuccess {String} msg msg: Welcome to test route
+*
+*/
 app.get('/test', function (req, res) {
   return res.status(200).
     send('Welcome to test route');
 });
 
+/**
+* @api {get} /pyc/upload/ Upload Image
+* @apiName Upload image to s3
+* @apiGroup Upload
+* @apiParam {String} photo base 64 string of image after taking of "data:image/jpeg;base64," 
+* @apiParam {String} name name of image + ext. e.g Ernest.jpg 
+* @apiParam {String} type content type of image gotten between : and ; in base64 string e.g in "data:image/jpeg;base64,dsadasdjkhsdjkfhsdjfh" type = image/jpeg
+* @apiSuccess {String} name name of image
+* @apiSuccess {String} location url link to image on s3 (this is the link that will be used in other payloads where photo is requested)
+*
+*/
 
 app.post('/pyc/upload', async function (req, res, next) {
   let fileName = req.body.name;
+  let type = req.body.type;
   let buffer = Buffer.from(req.body.photo, 'base64');
   try {
-    const data = await uploadToS3(buffer, fileName);
+    const data = await uploadToS3(buffer, fileName, type);
     return res.status(200).send(data);
   } 
   catch (error) {
