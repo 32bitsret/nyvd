@@ -32,6 +32,9 @@ const ProfileSchema = mongoose.Schema({
   disability: { 
     type: String 
   },
+  state: { 
+    type: String 
+  },
   lga: { 
     type: String 
   },

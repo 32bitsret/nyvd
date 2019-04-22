@@ -91,6 +91,13 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "state",
+            "description": "<p>State of user on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "lga",
             "description": "<p>Local government area of user on profile</p>"
           },
@@ -219,6 +226,13 @@
             "optional": false,
             "field": "disability",
             "description": "<p>Any Profile Disability</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "state",
+            "description": "<p>State of user on profile</p>"
           },
           {
             "group": "Success 200",
@@ -372,6 +386,13 @@
             "optional": false,
             "field": "disability",
             "description": "<p>Any Profile Disability</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "state",
+            "description": "<p>State of user on profile</p>"
           },
           {
             "group": "Success 200",
@@ -621,6 +642,13 @@
             "group": "Parameter",
             "type": "String",
             "optional": true,
+            "field": "gender",
+            "description": "<p>gender of user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
             "field": "photo",
             "description": "<p>url link to photo saved to s3</p>"
           },
@@ -688,6 +716,13 @@
             "optional": false,
             "field": "phone",
             "description": "<p>phone number of user</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>gender of user</p>"
           },
           {
             "group": "Success 200",

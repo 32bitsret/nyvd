@@ -21,6 +21,7 @@ const
 * @apiSuccess {String} DoB Date of birth on Profile as string
 * @apiSuccess {String} marital_status marital status on Profile
 * @apiSuccess {String} disability Any Profile Disability
+* @apiSuccess {String} state State of user on profile
 * @apiSuccess {String} lga Local government area of user on profile
 * @apiSuccess {Number} phone phone number on profile
 * @apiSuccess {String} address address on profile
