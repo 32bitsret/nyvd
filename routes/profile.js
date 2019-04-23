@@ -25,10 +25,11 @@ const
 * @apiSuccess {String} lga Local government area of user on profile
 * @apiSuccess {Number} phone phone number on profile
 * @apiSuccess {String} address address on profile
-* @apiSuccess {String} address address on profile
+* @apiSuccess {String} employment_status employment_status on profile
+* @apiSuccess {String} type_of_work type_of_work on profile
 * @apiSuccess {String} photo photo url on profile
 * @apiSuccess {String} resume resume url on profile
-* @apiSuccess {Object} education educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)
+* @apiSuccess {Object} education educational qualification on profile (contains educational_qualification(O'LEVEL, HMD, OND, BSC, MSC, PHD), course, institution, year_of_graduation, certificate)
 */
 
 

@@ -69,6 +69,12 @@ const ProfileSchema = mongoose.Schema({
   },
   resume: {
     type: String
+  },
+  employment_status: {
+    type: String
+  },
+  type_of_work: {
+    type: String
   }
 });
 

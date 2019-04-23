@@ -501,6 +501,20 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "employment_status",
+            "description": "<p>employment_status on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type_of_work",
+            "description": "<p>type_of_work on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "photo",
             "description": "<p>photo url on profile</p>"
           },
@@ -516,7 +530,7 @@ define({ "api": [
             "type": "Object",
             "optional": false,
             "field": "education",
-            "description": "<p>educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)</p>"
+            "description": "<p>educational qualification on profile (contains educational_qualification(O'LEVEL, HMD, OND, BSC, MSC, PHD), course, institution, year_of_graduation, certificate)</p>"
           }
         ]
       }
@@ -641,6 +655,20 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "employment_status",
+            "description": "<p>employment_status on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type_of_work",
+            "description": "<p>type_of_work on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "photo",
             "description": "<p>photo url on profile</p>"
           },
@@ -656,7 +684,7 @@ define({ "api": [
             "type": "Object",
             "optional": false,
             "field": "education",
-            "description": "<p>educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)</p>"
+            "description": "<p>educational qualification on profile (contains educational_qualification(O'LEVEL, HMD, OND, BSC, MSC, PHD), course, institution, year_of_graduation, certificate)</p>"
           }
         ]
       }
@@ -801,6 +829,20 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "employment_status",
+            "description": "<p>employment_status on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "type_of_work",
+            "description": "<p>type_of_work on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "photo",
             "description": "<p>photo url on profile</p>"
           },
@@ -816,7 +858,7 @@ define({ "api": [
             "type": "Object",
             "optional": false,
             "field": "education",
-            "description": "<p>educational qualification on profile (contains educational_qualifications, course, institution, year_of_graduation, certificate)</p>"
+            "description": "<p>educational qualification on profile (contains educational_qualification(O'LEVEL, HMD, OND, BSC, MSC, PHD), course, institution, year_of_graduation, certificate)</p>"
           }
         ]
       }
