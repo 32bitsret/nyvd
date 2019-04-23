@@ -74,8 +74,8 @@ process.on('SIGINT', function () {
  */
 //=============================================================================
 app.use(cors());
-app.use(bParser.json());
-app.use(bParser.urlencoded({extended: true}));
+app.use(bParser.json({limit: '50mb'}));
+app.use(bParser.urlencoded({limit: '50mb', parameterLimit: 100000, extended: true}));
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(path.join(__dirname, '/')));
 app.set('apidoc', path.join(__dirname, 'apidoc'));
@@ -96,13 +96,7 @@ app.use((req, res, next) => {
  * Routes
  */
 //=============================================================================
-/**
-* @api {get} /test/ Hit test route
-* @apiName Test the API
-* @apiGroup Test
-* @apiSuccess {String} msg msg: Welcome to test route
-*
-*/
+
 app.get('/test', function (req, res) {
   return res.status(200).
     send('Welcome to test route');
