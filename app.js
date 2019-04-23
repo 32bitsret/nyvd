@@ -10,6 +10,7 @@ if (process.env.NODE_ENV != 'production') {
 const
   express = require('express'),
   bParser = require('body-parser'),
+  uploadToS3 = require('./models/utils/uploadToS3'),
   passport = require('passport'),
   path = require('path'),
   mongoose = require('mongoose'),
