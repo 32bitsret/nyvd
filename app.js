@@ -108,9 +108,11 @@ app.post('/pyc/upload', async function (req, res, next) {
   let buffer = Buffer.from(req.body.photo, 'base64');
   try {
     const data = await uploadToS3(buffer, fileName, type);
+    console.log(data);
     return res.status(200).send(data);
   } 
   catch (error) {
+    console.log(error)
     return res.status(400).send(error);
   }
 });
