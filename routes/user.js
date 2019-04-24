@@ -52,7 +52,7 @@ const router = express.Router();
 * @apiGroup User
 * @apiParam {String} email email of User
 * @apiParam {String} password password of user 
-* @apiParam {String} token token from user device
+* @apiParam {String} expo_token token from user device
 * @apiParam {String} [role] role of user. Either admin or user. Default is user
 * @apiParam {String} [firstname] firstname of user 
 * @apiParam {String} [lastname] lastname of user 
@@ -92,12 +92,19 @@ router.post('/registerUser', (req, res) => {
 				})
         // return res.status(200).json(result);  
       })
-      .catch(error => res.status(400).json({message: error}));
+      .catch(error => {        
+          res.status(400).json({message: error});
+      });
       // return res.status(200).json(result);
     })
-    .catch(err => {
-      console.error('/registerUser ' + JSON.stringify(err));
-      return res.status(400).json({message: err});
+    .catch(error => {
+      console.error('/registerUser ' + JSON.stringify(error));
+      if (error.includes('duplicate key error')) {
+        return res.status(400).json({message: 'A duplicate value was provided, Check your phone number'});
+      }
+      else {
+        return res.status(400).json({message: error});
+      }
   });
 });
 

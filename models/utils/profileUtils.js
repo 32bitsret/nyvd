@@ -44,7 +44,7 @@ exports.createProfile = (doc) => {
 
 exports.updateProfile = (doc, res) => {
 	if (_.isEmpty(doc.query) || _.isEmpty(doc.update)) {
-			return Promise.reject("Either query or Update params of the request is empty");
+			return res.status(400).json({message:"Either query or Update params of the request is empty"});
 	}
 	else {
       Profile.findOneAndUpdate(doc.query, doc.update, {new: true})
@@ -74,7 +74,6 @@ exports.getAllProfile = (res) => {
 
 exports.getProfile = (data, res) => {
 	if (_.isEmpty(data)) {
-		console.log(data)
 		return res.status(400).json({message: 'Missing key Fields'});
 	}
   Profile.findOne({phone: data.phone})

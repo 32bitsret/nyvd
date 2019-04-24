@@ -40,7 +40,7 @@ const ProfileSchema = mongoose.Schema({
   },
   phone: { 
     type: Number,
-    unique: true
+    unique: [true, 'Duplicate Phone number']
   },
   address: { 
     type: String 
