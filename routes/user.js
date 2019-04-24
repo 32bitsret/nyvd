@@ -69,8 +69,8 @@ router.post('/registerUser', (req, res) => {
 
   userUtils.registerUser(req.body)
     .then(result => {
-      const {firstname, lastname, phone, email, photo} = req.body;
-      return profileUtils.createProfile({email, phone, firstname, lastname, photo})
+      const {firstname, lastname, phone, email, photo, gender} = req.body;
+      return profileUtils.createProfile({email, phone, firstname, lastname, photo, gender})
       .then(ok => {
 				const secretOrKey = 'superSasdlfjal;jafecasfaklfnalkfretKey';
         const payload = {
