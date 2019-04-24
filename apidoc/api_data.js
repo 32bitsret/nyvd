@@ -1038,7 +1038,7 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "token",
+            "field": "expo_token",
             "description": "<p>token from user device</p>"
           },
           {
