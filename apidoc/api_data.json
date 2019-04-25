@@ -17,38 +17,24 @@
           },
           {
             "group": "Parameter",
-            "type": "String",
+            "type": "Object",
             "optional": false,
-            "field": "lga",
-            "description": "<p>lga on message</p>"
+            "field": "query",
+            "description": "<p>query params for saving. must contain the following lga, gender, disability, marital_status, qualification</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "expo_tokens",
+            "description": "<p>array of tokens that will get the push notification</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "gender",
-            "description": "<p>gender on message</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "disability",
-            "description": "<p>disability on message</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "marital_status",
-            "description": "<p>marital status on message</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "qualification",
-            "description": "<p>qualification on message</p>"
+            "field": "title",
+            "description": "<p>title of message</p>"
           }
         ]
       }
@@ -900,7 +886,7 @@
     "groupTitle": "Test"
   },
   {
-    "type": "get",
+    "type": "post",
     "url": "/pyc/upload/",
     "title": "Upload Image",
     "name": "Upload_image_to_s3",

@@ -90,7 +90,7 @@ router.put('/profile/', (req, res) => {
 module.exports = router;
 
 /**
-* @api {get} /pyc/upload/ Upload Image
+* @api {post} /pyc/upload/ Upload Image
 * @apiName Upload image to s3
 * @apiGroup Upload
 * @apiParam {String} photo base 64 string of image after taking of "data:image/jpeg;base64," 

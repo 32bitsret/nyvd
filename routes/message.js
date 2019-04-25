@@ -36,11 +36,9 @@ const
 * @apiName Create Message
 * @apiGroup Message
 * @apiParam {String} message body of message 
-* @apiParam {String} lga lga on message 
-* @apiParam {String} gender gender on message 
-* @apiParam {String} disability disability on message 
-* @apiParam {String} marital_status marital status on message
-* @apiParam {String} qualification qualification on message  
+* @apiParam {Object} query query params for saving. must contain the following lga, gender, disability, marital_status, qualification
+* @apiParam {Array} expo_tokens array of tokens that will get the push notification 
+* @apiParam {String} title title of message   
 * @apiUse MessageSuccess
 *
 * @apiUse MessageError  

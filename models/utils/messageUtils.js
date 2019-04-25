@@ -6,17 +6,22 @@
 //=============================================================================
 const 
   Message = require('../Message'),
+  expoPush = require('./expoPushNotification'),
 	_ = require('lodash');
 
 
 exports.createMessage = (doc, res) => {
-	if (_.isEmpty(doc)) {
-			return Promise.reject("The body of the message request is empty");
+  let {message, title, expo_tokens, query} = doc;
+
+	if ((_.isEmpty(doc) || !expo_tokens) || (!title || _.isEmpty(query))) {
+			return res.status(400).json({message: "The body of the message request is empty"});
 	}
 	else {
-    const newMessage = new Message(doc);
+    let newMessageBody = {message, ...query};
+    const newMessage = new Message(newMessageBody);
     return newMessage.save()
-    .then(savedDoc => {
+    .then(async savedDoc => {
+      await expoPush([message], title, expo_tokens);
       return res.status(201).json({data: savedDoc, message: 'Message saved successfully'});
     })
     .catch(error => {
