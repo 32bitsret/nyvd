@@ -1,6 +1,5 @@
-import Expo from 'expo-server-sdk';
+const Expo = require('expo-server-sdk');
 
-let expo = new Expo();
 
 module.exports = (messages, title, pushTokens) => {
   for (let pushToken of pushTokens) {
@@ -16,12 +15,12 @@ module.exports = (messages, title, pushTokens) => {
     })
   }
 
-  let chunks = expo.chunkPushNotifications(messages);
+  let chunks = Expo.chunkPushNotifications(messages);
   let tickets = [];
   (async () => {
     for (let chunk of chunks) {
       try {
-        let ticketChunk = await expo.sendPushNotificationsAsync(chunk);
+        let ticketChunk = await Expo.sendPushNotificationsAsync(chunk);
         console.log(ticketChunk);
         tickets.push(...ticketChunk);
       }
@@ -40,11 +39,11 @@ module.exports = (messages, title, pushTokens) => {
     }
   }
 
-  let receiptIdChunks = expo.chunkPushNotificationReceiptIds(receiptIds);
+  let receiptIdChunks = Expo.chunkPushNotificationReceiptIds(receiptIds);
   (async () => {
     for (let chunk of receiptIdChunks) {
       try {
-        let receipts = await expo.getPushNotificationReceiptsAsync(chunk);
+        let receipts = await Expo.getPushNotificationReceiptsAsync(chunk);
         console.log(receipts);
         for (let receipt of receipts) {
           if (receipt.status === 'ok') {
