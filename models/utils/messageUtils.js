@@ -13,7 +13,7 @@ const
 exports.createMessage = (doc, res) => {
   let {message, title, expo_tokens, query} = doc;
 
-	if ((_.isEmpty(doc) || !expo_tokens) || (!title || _.isEmpty(query))) {
+	if (_.isEmpty(doc) || (!title || _.isEmpty(query))) {
 			return res.status(400).json({message: "The body of the message request is empty"});
 	}
 	else {
@@ -21,8 +21,13 @@ exports.createMessage = (doc, res) => {
     const newMessage = new Message(newMessageBody);
     return newMessage.save()
     .then(async savedDoc => {
-      await expoPush([message], title, expo_tokens);
-      return res.status(201).json({data: savedDoc, message: 'Message saved successfully'});
+      if (expo_tokens.length > 0) {
+        await expoPush([message], title, expo_tokens);
+        return res.status(201).json({data: savedDoc, message: 'Message saved successfully and notification sent'});
+      } 
+      else {
+        return res.status(201).json({data: savedDoc, message: 'Message saved successfully and no notification sent'});
+      }
     })
     .catch(error => {
       console.log(error.message)
@@ -82,7 +87,12 @@ exports.getMessageByQuery = (data, res) => {
 	}
   Message.find(data.query)
     .then(messages => {
-      return res.status(200).json({data: messages, message: 'Message retrieved successfully'});
+      if (messages.length > 0) {
+        return res.status(200).json({data: messages, message: 'Message retrieved successfully'});
+      }
+      else {
+        return res.status(200).json({message: 'No Message found with search params'}); 
+      }
     })
     .catch(error => {
       return res.status(400).json({message: 'An error occured while trying to retrieve Message with query' + data.query});

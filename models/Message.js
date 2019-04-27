@@ -6,21 +6,21 @@ const MessageSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  qualification: { 
+  qualification: [{ 
     type: String 
-  },
-  marital_status: { 
+  }],
+  marital_status: [{ 
     type: String 
-  },
-  gender: {
+  }],
+  gender: [{
     type: String
-  },
-  disability: {
+  }],
+  disability: [{
     type: String
-  },
-  lga: {
+  }],
+  lga: [{
     type: String,
-  }
+  }]
 });
 
 

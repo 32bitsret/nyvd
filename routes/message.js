@@ -16,12 +16,12 @@ const
 *
 * @apiSuccess {String} _id ID of Message
 * @apiSuccess {String} message message saved
-* @apiSuccess {String} lga lga on Message
-* @apiSuccess {String} gender gender on Message
-* @apiSuccess {String} marital_status marital status on Message
-* @apiSuccess {String} disability Any stated Disability
-* @apiSuccess {String} lga Local government area of user on message
-* @apiSuccess {String} qualification qualification on message
+* @apiSuccess {String} title lga on Message
+* @apiSuccess {Array} gender gender on Message
+* @apiSuccess {Array} marital_status marital status on Message
+* @apiSuccess {Array} disability Any stated Disability
+* @apiSuccess {Array} lga Local government area of user on message
+* @apiSuccess {Array} qualification qualification on message
 */
 
 
@@ -36,7 +36,7 @@ const
 * @apiName Create Message
 * @apiGroup Message
 * @apiParam {String} message body of message 
-* @apiParam {Object} query query params for saving. must contain the following lga, gender, disability, marital_status, qualification
+* @apiParam {Object} query query params for saving. must contains array of the following lga, gender, disability, marital_status, qualification
 * @apiParam {Array} expo_tokens array of tokens that will get the push notification 
 * @apiParam {String} title title of message   
 * @apiUse MessageSuccess
