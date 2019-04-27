@@ -39,12 +39,26 @@ const
  */
 
 
-
 /**
-* @api {post} /pyc/profile/ Find a User Profile query
+* @api {post} /pyc/profile/query/ Find a User Profile by  query
 * @apiName Find Profile by query
 * @apiGroup Profile
 * @apiParam {Object} query query is an object containing search params eg phone, lga etc 
+* @apiUse ProfileSuccess
+*
+* @apiUse ProfileError  
+*/
+
+router.post('/profile/query/', (req, res) => {
+  return profileUtils.getProfileByQuery(req.body, res);
+});
+
+
+/**
+* @api {post} /pyc/profile/ Find a User by phone
+* @apiName Find Profile by phone
+* @apiGroup Profile
+* @apiParam {Number} phone phone number on record
 * @apiUse ProfileSuccess
 *
 * @apiUse ProfileError  

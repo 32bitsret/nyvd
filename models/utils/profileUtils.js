@@ -72,7 +72,7 @@ exports.getAllProfile = (res) => {
     })
 }
 
-exports.getProfile = (data, res) => {
+exports.getProfileByQuery = (data, res) => {
 	if (_.isEmpty(data.query)) {
 		return res.status(400).json({message: 'Missing key Fields'});
 	}
@@ -82,5 +82,18 @@ exports.getProfile = (data, res) => {
     })
     .catch(error => {
       return res.status(400).json({message: 'An error occured while trying to retrieve Profile with'});
+    })
+}
+
+exports.getProfile = (data, res) => {
+	if (_.isEmpty(data)) {
+		return res.status(400).json({message: 'Missing key Fields'});
+	}
+  Profile.findOne({phone: data.phone})
+    .then(profile => {
+      return res.status(200).json({data: profile, message: 'Profile retrieved successfully'});
+    })
+    .catch(error => {
+      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with phone ' + data.phone });
     })
 }
