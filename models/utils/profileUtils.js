@@ -73,14 +73,14 @@ exports.getAllProfile = (res) => {
 }
 
 exports.getProfile = (data, res) => {
-	if (_.isEmpty(data)) {
+	if (_.isEmpty(data.query)) {
 		return res.status(400).json({message: 'Missing key Fields'});
 	}
-  Profile.findOne({phone: data.phone})
+  Profile.find(data.query)
     .then(profile => {
-      return res.status(200).json({data: profile, message: 'Profile retrieved successfully'});
+      return res.status(200).json({data: profile, message: 'Profile(s) retrieved successfully'});
     })
     .catch(error => {
-      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with id' + data.phone});
+      return res.status(400).json({message: 'An error occured while trying to retrieve Profile with'});
     })
 }

@@ -41,10 +41,10 @@ const
 
 
 /**
-* @api {post} /pyc/profile/ Find a User Profile by phone number
-* @apiName Find Profile of a user
+* @api {post} /pyc/profile/ Find a User Profile query
+* @apiName Find Profile by query
 * @apiGroup Profile
-* @apiParam {Number} phone phone number of user 
+* @apiParam {Object} query query is an object containing search params eg phone, lga etc 
 * @apiUse ProfileSuccess
 *
 * @apiUse ProfileError  

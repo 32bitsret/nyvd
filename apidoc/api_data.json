@@ -370,18 +370,18 @@
   {
     "type": "post",
     "url": "/pyc/profile/",
-    "title": "Find a User Profile by phone number",
-    "name": "Find_Profile_of_a_user",
+    "title": "Find a User Profile query",
+    "name": "Find_Profile_by_query",
     "group": "Profile",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "Object",
             "optional": false,
-            "field": "phone",
-            "description": "<p>phone number of user</p>"
+            "field": "query",
+            "description": "<p>query is an object containing search params eg phone, lga etc</p>"
           }
         ]
       }
