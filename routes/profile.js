@@ -14,6 +14,7 @@ const
 *
 * @apiSuccess {String} _id ID of Profile
 * @apiSuccess {String} email email on profile
+* @apiSuccess {String} expo_token expo_token on profile
 * @apiSuccess {String} firstname firstname on Profile
 * @apiSuccess {String} middlename middlename on Profile
 * @apiSuccess {String} lastname lastname on Profile

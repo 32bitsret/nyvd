@@ -20,7 +20,7 @@ define({ "api": [
             "type": "Object",
             "optional": false,
             "field": "query",
-            "description": "<p>query params for saving. must contain the following lga, gender, disability, marital_status, qualification</p>"
+            "description": "<p>query params for saving. must contains array of the following lga, gender, disability, marital_status, qualification</p>"
           },
           {
             "group": "Parameter",
@@ -63,33 +63,40 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "lga",
+            "field": "title",
             "description": "<p>lga on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "gender",
             "description": "<p>gender on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "marital_status",
             "description": "<p>marital status on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "disability",
             "description": "<p>Any stated Disability</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
+            "optional": false,
+            "field": "lga",
+            "description": "<p>Local government area of user on message</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
             "optional": false,
             "field": "qualification",
             "description": "<p>qualification on message</p>"
@@ -140,33 +147,40 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "lga",
+            "field": "title",
             "description": "<p>lga on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "gender",
             "description": "<p>gender on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "marital_status",
             "description": "<p>marital status on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "disability",
             "description": "<p>Any stated Disability</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
+            "optional": false,
+            "field": "lga",
+            "description": "<p>Local government area of user on message</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
             "optional": false,
             "field": "qualification",
             "description": "<p>qualification on message</p>"
@@ -230,33 +244,40 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "lga",
+            "field": "title",
             "description": "<p>lga on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "gender",
             "description": "<p>gender on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "marital_status",
             "description": "<p>marital status on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "disability",
             "description": "<p>Any stated Disability</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
+            "optional": false,
+            "field": "lga",
+            "description": "<p>Local government area of user on message</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
             "optional": false,
             "field": "qualification",
             "description": "<p>qualification on message</p>"
@@ -320,33 +341,40 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "lga",
+            "field": "title",
             "description": "<p>lga on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "gender",
             "description": "<p>gender on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "marital_status",
             "description": "<p>marital status on Message</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
             "optional": false,
             "field": "disability",
             "description": "<p>Any stated Disability</p>"
           },
           {
             "group": "Success 200",
-            "type": "String",
+            "type": "Array",
+            "optional": false,
+            "field": "lga",
+            "description": "<p>Local government area of user on message</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
             "optional": false,
             "field": "qualification",
             "description": "<p>qualification on message</p>"
@@ -405,6 +433,13 @@ define({ "api": [
             "optional": false,
             "field": "email",
             "description": "<p>email on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "expo_token",
+            "description": "<p>expo_token on profile</p>"
           },
           {
             "group": "Success 200",
@@ -577,6 +612,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "expo_token",
+            "description": "<p>expo_token on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "firstname",
             "description": "<p>firstname on Profile</p>"
           },
@@ -726,6 +768,13 @@ define({ "api": [
             "optional": false,
             "field": "email",
             "description": "<p>email on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "expo_token",
+            "description": "<p>expo_token on profile</p>"
           },
           {
             "group": "Success 200",
@@ -900,6 +949,13 @@ define({ "api": [
             "optional": false,
             "field": "email",
             "description": "<p>email on profile</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "expo_token",
+            "description": "<p>expo_token on profile</p>"
           },
           {
             "group": "Success 200",

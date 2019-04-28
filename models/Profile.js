@@ -11,6 +11,9 @@ const ProfileSchema = mongoose.Schema({
     trim: true,
     match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
   },
+  expo_token: {
+    type: String,
+  },
   firstname: { 
     type: String 
   },
