@@ -12,7 +12,7 @@ const
 
 exports.createMessage = (doc, res) => {
   let {message, title, expo_tokens, query} = doc;
-
+  console.log(doc);
 	if (_.isEmpty(doc) || (!title || _.isEmpty(query))) {
 			return res.status(400).json({message: "The body of the message request is empty"});
 	}
@@ -22,6 +22,8 @@ exports.createMessage = (doc, res) => {
     return newMessage.save()
     .then(async savedDoc => {
       if (expo_tokens.length > 0) {
+        console.log([message], title, expo_tokens);
+
         await expoPush([message], title, expo_tokens);
         return res.status(201).json({data: savedDoc, message: 'Message saved successfully and notification sent'});
       } 
