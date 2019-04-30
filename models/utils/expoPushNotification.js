@@ -7,7 +7,7 @@ module.exports = async (messages, title, pushTokens) => {
     console.log('1');
     if (!Expo.isExpoPushToken(pushTokens)) {
       console.error(`Push token ${pushTokens} is not a valid Expo push token`);
-      continue;
+      // continue;
     }
     console.log('2');
 
