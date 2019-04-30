@@ -2,22 +2,23 @@ const {Expo} = require('expo-server-sdk');
 
 let expo = new Expo();
 
-module.exports = async (messages, title, pushTokens) => {
-  // for (let pushToken of pushTokens) {
+module.exports = async (text, title, pushTokens) => {
+  let messages = [];
+  for (let pushToken of pushTokens) {
     console.log('1');
-    if (!Expo.isExpoPushToken(pushTokens[0])) {
-      console.error(`Push token ${pushTokens[0]} is not a valid Expo push token`);
-      // continue;
+    if (!Expo.isExpoPushToken(pushToken)) {
+      console.error(`Push token ${pushToken} is not a valid Expo push token`);
+      continue;
     }
     console.log('2');
 
-    await messages.push({
-      to: pushTokens,
+    messages.push({
+      to: pushToken,
       sound: 'default',
-      body: title,
-      data: { withSome: 'data' },
-    })
-  // }
+      body: text,
+      data: { title: title },
+    });
+  }
   console.log('3');
 
   let chunks = await expo.chunkPushNotifications(messages);

@@ -24,7 +24,7 @@ exports.createMessage = (doc, res) => {
       if (expo_tokens.length > 0) {
         console.log([message], title, expo_tokens);
 
-        await expoPush([message], title, expo_tokens);
+        await expoPush(message, title, expo_tokens);
         return res.status(201).json({data: savedDoc, message: 'Message saved successfully and notification sent'});
       } 
       else {
