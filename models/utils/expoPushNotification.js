@@ -5,8 +5,8 @@ let expo = new Expo();
 module.exports = async (messages, title, pushTokens) => {
   // for (let pushToken of pushTokens) {
     console.log('1');
-    if (!Expo.isExpoPushToken(pushTokens)) {
-      console.error(`Push token ${pushTokens} is not a valid Expo push token`);
+    if (!Expo.isExpoPushToken(pushTokens[0])) {
+      console.error(`Push token ${pushTokens[0]} is not a valid Expo push token`);
       // continue;
     }
     console.log('2');
