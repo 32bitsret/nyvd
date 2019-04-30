@@ -5,12 +5,10 @@ let expo = new Expo();
 module.exports = async (text, title, pushTokens) => {
   let messages = [];
   for (let pushToken of pushTokens) {
-    console.log('1');
     if (!Expo.isExpoPushToken(pushToken)) {
       console.error(`Push token ${pushToken} is not a valid Expo push token`);
       continue;
     }
-    console.log('2');
 
     messages.push({
       to: pushToken,
@@ -19,10 +17,8 @@ module.exports = async (text, title, pushTokens) => {
       data: { title: title },
     });
   }
-  console.log('3');
 
   let chunks = await expo.chunkPushNotifications(messages);
-  console.log('4');
 
   let tickets = [];
   (async () => {
