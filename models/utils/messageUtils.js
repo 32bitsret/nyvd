@@ -83,9 +83,8 @@ exports.getMessage = (data, res) => {
 }
 
 exports.getMessageByQuery = (data, res) => {
-	if (_.isEmpty(data)) {
-		console.log(data)
-		return res.status(400).json({message: 'Missing key Fields'});
+	if (_.isEmpty(data.query)) {
+		return res.status(400).json({message: 'Missing key Field. Either a query object or params inside a query object'});
 	}
   Message.find(data.query)
     .then(messages => {
