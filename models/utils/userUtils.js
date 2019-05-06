@@ -8,6 +8,7 @@ const
   User = require('../User'),
 	bcrypt = require('bcrypt'),
 	jwt = require('jsonwebtoken'),
+	Profile = require('../Profile'),
 	_ = require('lodash');
 
 exports.getUsers = (filter) => {
@@ -90,14 +91,15 @@ exports.loginUser = (inputUser, res) => {
 				return res.status(400).json({message: 'User not found'});
 			}
 			const match = await bcrypt.compare(password, user.password);
+			const profile = await Profile.findOne({ email }).exec();
 			// return match;
 			if(!!match) {
 				let secretOrKey = 'superSasdlfjal;jafecasfaklfnalkfretKey';
 				const payload = {
 					id: user._id,
-					firstname: user.firstname,
-					lastname: user.lastname,
-					photo: user.photo,
+					firstname: profile.firstname,
+					lastname: profile.lastname,
+					photo: profile.photo,
 					phone: user.phone,
 					email: user.email,
 					role: user.role
