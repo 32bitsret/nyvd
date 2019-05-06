@@ -6,6 +6,9 @@ const MessageSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  title: {
+    type: String
+  },
   qualification: [{ 
     type: String 
   }],
@@ -20,7 +23,11 @@ const MessageSchema = mongoose.Schema({
   }],
   lga: [{
     type: String,
-  }]
+  }],
+  time: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 

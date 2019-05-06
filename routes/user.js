@@ -67,10 +67,12 @@ router.post('/registerUser', (req, res) => {
     .then(result => {
       const {firstname, lastname, phone, email, photo, gender, expo_token} = req.body;
       return profileUtils.createProfile({email, phone, firstname, lastname, photo, gender, expo_token})
-      .then(ok => {
+      .then(profile => {
 				const secretOrKey = 'superSasdlfjal;jafecasfaklfnalkfretKey';
         const payload = {
-					id: result._id,
+          id: result._id,
+          firstname: profile.firstname,
+          lastname: profile.lastname,
 					email: result.email
 				}; 
         return jwt.sign(payload, secretOrKey, { expiresIn: 360000 }, (err, token) => {
