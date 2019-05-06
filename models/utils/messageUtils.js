@@ -17,7 +17,7 @@ exports.createMessage = (doc, res) => {
 			return res.status(400).json({message: "The body of the message request is empty"});
 	}
 	else {
-    let newMessageBody = {message, ...query};
+    let newMessageBody = {message, title, ...query};
     const newMessage = new Message(newMessageBody);
     return newMessage.save()
     .then(async savedDoc => {
