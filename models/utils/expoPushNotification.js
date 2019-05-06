@@ -26,7 +26,8 @@ module.exports = async (text, title, pushTokens) => {
       try {
         let ticketChunk = await expo.sendPushNotificationsAsync(chunk);
         console.log(ticketChunk);
-        tickets.push(...ticketChunk);
+        await tickets.push(...ticketChunk);
+        console.log(tickets)
       }
       catch (error) {
         console.error(error);

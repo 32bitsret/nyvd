@@ -20,29 +20,14 @@ const UserSchema = mongoose.Schema({
       message: props => `${props.value} is not long enough!`
     }
   },
-  firstname: { 
-    type: String 
-  },
-  lastname: { 
-    type: String 
-  },
-  photo: {
-    type: String
-  },
   phone: {
     type: Number,
     unique: true
-  },
-  gender: {
-    type: String
   },
   role: {
     type: String,
     enum: ['admin', 'user'],
     default: 'user'
-  },
-  expo_token: {
-    type: String,
   },
   activated: {
     type: Boolean,

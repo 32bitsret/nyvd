@@ -30,11 +30,7 @@ const router = express.Router();
 * @apiSuccess {String} _id ID of User
 * @apiSuccess {String} email email of User
 * @apiSuccess {String} password password hash of user 
-* @apiSuccess {String} firstname firstname of user 
-* @apiSuccess {String} lastname lastname of user 
-* @apiSuccess {String} photo url link to photo saved to s3 
 * @apiSuccess {Number} phone phone number of user  
-* @apiSuccess {String} gender gender of user  
 * @apiSuccess {String} role role of user either admin or user  
 * @apiSuccess {Boolean} activated Status of account true or false default true
 *
@@ -75,9 +71,6 @@ router.post('/registerUser', (req, res) => {
 				const secretOrKey = 'superSasdlfjal;jafecasfaklfnalkfretKey';
         const payload = {
 					id: result._id,
-					firstname: result.firstname,
-					lastname: result.lastname,
-					photo: result.photo,
 					email: result.email
 				}; 
         return jwt.sign(payload, secretOrKey, { expiresIn: 360000 }, (err, token) => {
