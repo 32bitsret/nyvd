@@ -59,7 +59,7 @@ exports.createMessage = (doc, res) => {
 // };
 
 exports.getAllMessage = (res) => {
-  Message.find()
+  Message.find().sort('-time')
     .then(messages => {
       return res.status(200).json({data: messages, message: 'Messages retrieved successfully'});
     })
@@ -86,7 +86,7 @@ exports.getMessageByQuery = (data, res) => {
 	if (_.isEmpty(data.query)) {
 		return res.status(400).json({message: 'Missing key Field. Either a query object or params inside a query object'});
 	}
-  Message.find(data.query)
+  Message.find(data.query).sort('-time')
     .then(messages => {
       if (messages.length > 0) {
         return res.status(200).json({data: messages, message: 'Message retrieved successfully'});
