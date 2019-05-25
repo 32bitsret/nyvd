@@ -4,9 +4,6 @@ const
 
 
 AWS.config.update({
-  accessKeyId: process.env.accessKeyId,
-  secretAccessKey: process.env.secretAccessKey,
-  region: 'us-east-1',
   s3ForcePathStyle: true
 });
 
