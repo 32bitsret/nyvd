@@ -127,6 +127,10 @@ router.post('/loginUser', (req, res) => {
     // });
 });
 
+router.get('/dumpENV', (req, res) => {
+    res.send(process.env);
+});
+
 
 
 
