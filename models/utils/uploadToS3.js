@@ -4,7 +4,8 @@ const
 
 
 AWS.config.update({
-  s3ForcePathStyle: true
+  s3ForcePathStyle: true,
+  region: 'us-east-1'
 });
 
 AWS.config.setPromisesDependency(bluebird);
