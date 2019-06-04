@@ -127,6 +127,22 @@ router.post('/loginUser', (req, res) => {
     // });
 });
 
+/**
+* @api {put} /pyc/user/password_change Change a password
+* @apiName Change Password
+* @apiGroup User
+* @apiParam {String} oldPassword old password of User
+* @apiParam {String} newPassword new password of User
+* @apiParam {String} id ID of User
+* @apiUse UserSuccess
+*
+* @apiUse UserError  
+*/
+//used on register page, brand new users
+router.put('/user/password_change', (req, res) => {
+  return userUtils.changePassword(req.body, res);
+});
+
 
 
 

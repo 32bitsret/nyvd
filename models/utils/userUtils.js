@@ -56,8 +56,35 @@ exports.createUsers = (doc) => {
 	}
 };
 
+exports.changePassword = (reqBody, res) => {
+	let {id, oldPassword, newPassword} = reqBody;
+	  // Find user by email
+		return User.findOne({ _id: id })
+    .then(async user => {
+			if(!user) {
+				return res.status(400).json({message: 'User not found'});
+			}
+			const match = await bcrypt.compare(oldPassword, user.password);
+			if(!!match) {
+			const salt = await bcrypt.genSalt(10);
+			const hash =  await bcrypt.hash(newPassword, salt);
+			return hash;
+			}
+			else {
+				return res.status(400).json({message: 'Incorrect password'});
+			}
+      
+		})
+		.then(async (hash) => {
+			await User.update({_id: id}, {password: hash});
+			return res.status(200).json({message: 'Password Changed'});
+		})
+		.catch((error) => {
+			return res.status(400).json({message: error});
+		});
+}
+
 exports.registerUser = (inputUser) => {
-	console.log(inputUser);
 	let { email, password } = inputUser;
 	if (_.isEmpty(inputUser) || !(email && password)) {
 		return Promise.reject('Some key fields are missing. Hint Email or Password');
